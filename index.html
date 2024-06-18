@@ -5,15 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>איקס עיגול היפר כהן</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- הפנייה לקובץ manifest.json -->
+    <link rel="manifest" href="manifest.json">
+    <!-- רישום של service-worker.js -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function(error) {
+                console.log('ServiceWorker registration failed: ', error);
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
-          <h1></h1>
+            <h1></h1>
             <img src="logo.png" alt="היפר כהן לוגו" class="logo">
             <h1>רמי לוי-איקס עיגול</h1>
-          <h2>צרו חמש משבצות שוות ברצף וזכו</h2>
-           <h3>(הבעיה היא שיש לכם מכל מוצר רק 5 ניסיונות.....)</h3>
+            <h2>צרו חמש משבצות שוות ברצף וזכו</h2>
+            <h3>(הבעיה היא שיש לכם מכל מוצר רק 5 ניסיונות.....)</h3>
         </header>
         <div class="main-content">
             <div id="game-board">
